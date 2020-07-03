@@ -1,0 +1,33 @@
+
+<div id="app" class="container">
+  <h2>{{ title }}</h2>
+
+  <div class="input-group">
+  	<input v-model="newItem" v-on:keyup.enter="addItem"	placeholder="adicione um item a lista" type="text" class="formcontrol">
+  	<span class="input-group-btn">
+  		<button v-on:click="addItem" class="btn btn-default" type="button">Add!</button>
+  	</span>
+  </div>
+
+  <ul>
+	<li v-for="item in items" v-bind:class="{'removed': item.checked}">
+		<div class="checkbox" >
+			<label>
+				 <input type="checkbox" v-model="item.checked"/>
+				 {{item.text }}
+			</label>		   
+	  	</div>			
+	</li>
+  </ul>
+
+  <div class="footer" >
+    <hr/>
+    <em>Mudar alguma coisa aqui</em>
+    <input type="text" value="My Shopping List" v-model="title"/>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js">
+</script>
+<script type="text/javascript" src="index.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css"> </style>
